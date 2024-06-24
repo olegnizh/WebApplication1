@@ -52,15 +52,16 @@ namespace WebApplication1.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public async Task<IActionResult> Authors()
+        public async Task <IActionResult> Authors()
         {
             var authors = await _repo.GetUsers();
 
-            Console.WriteLine("See all blog authors:");
-            foreach (var author in authors)
-                Console.WriteLine($"Author name {author.FirstName}, joined {author.JoinDate}");
+            //Console.WriteLine("See all blog authors:");
+            //foreach (var author in authors)
+            //    Console.WriteLine($"Author name {author.FirstName}, joined {author.JoinDate}");
 
-            return View();
+            return View(authors);
+
         }
 
 

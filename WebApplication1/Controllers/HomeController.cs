@@ -21,7 +21,7 @@ namespace WebApplication1.Controllers
             _repo = repo;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task <IActionResult> Index()
         {
             // Добавим создание нового пользователя
             var newUser = new User()
@@ -51,5 +51,18 @@ namespace WebApplication1.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public async Task<IActionResult> Authors()
+        {
+            var authors = await _repo.GetUsers();
+
+            Console.WriteLine("See all blog authors:");
+            foreach (var author in authors)
+                Console.WriteLine($"Author name {author.FirstName}, joined {author.JoinDate}");
+
+            return View();
+        }
+
+
     }
 }

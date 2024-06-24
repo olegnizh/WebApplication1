@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Threading.Tasks;
 
 namespace WebApplication1.Models.Db
@@ -24,5 +26,14 @@ namespace WebApplication1.Models.Db
             // Сохранение изенений
             await _context.SaveChangesAsync();
         }
+
+        public async Task<User[]> GetUsers()
+        {
+            // Получим всех активных пользователей
+            return await _context.Users.ToArrayAsync();
+        }
+
+        
+
     }
 }

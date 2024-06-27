@@ -20,27 +20,28 @@ namespace WebApplication1.Controllers
             _logger = logger;
             _repo = repo;
         }
-        /*
+        
         public async Task <IActionResult> Index()
         {
             // Добавим создание нового пользователя
-            var newUser = new User()
-            {
-                Id = Guid.NewGuid(),
-                FirstName = "Andrey",
-                LastName = "Petrov",
-                JoinDate = DateTime.Now
-            };
+            //var newUser = new User()
+            //{
+            //    Id = Guid.NewGuid(),
+            //    FirstName = "Andrey",
+            //    LastName = "Petrov",
+            //    JoinDate = DateTime.Now
+            //};
 
             // Добавим в базу
-            await _repo.AddUser(newUser);
+            //await _repo.AddUser(newUser);
 
             // Выведем результат
-            Console.WriteLine($"User with id {newUser.Id}, named {newUser.FirstName} was successfully added on {newUser.JoinDate}");
+            //Console.WriteLine($"User with id {newUser.Id}, named {newUser.FirstName} was successfully added on {newUser.JoinDate}");
+
 
             return View();
         }
-        */
+        
         public IActionResult Privacy()
         {
             return View();
@@ -52,7 +53,7 @@ namespace WebApplication1.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public async Task <IActionResult> Authors()
+        public async Task <IActionResult>Authors()
         {
             var authors = await _repo.GetUsers();
 

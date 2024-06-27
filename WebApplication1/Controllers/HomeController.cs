@@ -20,7 +20,7 @@ namespace WebApplication1.Controllers
             _logger = logger;
             _repo = repo;
         }
-
+        /*
         public async Task <IActionResult> Index()
         {
             // Добавим создание нового пользователя
@@ -40,7 +40,7 @@ namespace WebApplication1.Controllers
 
             return View();
         }
-
+        */
         public IActionResult Privacy()
         {
             return View();

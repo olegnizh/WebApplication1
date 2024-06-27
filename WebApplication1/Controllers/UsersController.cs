@@ -18,6 +18,20 @@ namespace WebApplication1.Controllers
             var authors = await _repo.GetUsers();
             return View(authors);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(User newUser)
+        {
+            await _repo.AddUser(newUser);
+            return View();
+        }
+
     }
 
 }

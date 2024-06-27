@@ -33,6 +33,10 @@
 
 <div class="text-center">
     <div>
+
+        @if (Model == null)
+        {
+
         <h3 style="text-align: left">Добро пожаловать в наш блог!</h3>
         <br>
         <form method="post">
@@ -51,5 +55,12 @@
                 <input type="submit" value="Регистрация" />
             </div>
         </form>
+
+        }
+        else
+        {
+            @await Html.PartialAsync("_Thanks")
+        }
+
     </div>
 </div>

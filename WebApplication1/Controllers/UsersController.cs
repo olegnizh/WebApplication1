@@ -29,7 +29,7 @@ namespace WebApplication1.Controllers
         public async Task<IActionResult> Register(User newUser)
         {
             await _repo.AddUser(newUser);
-            return View();
+            return View(newUser);
         }
 
     }
